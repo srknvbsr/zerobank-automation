@@ -1,6 +1,7 @@
 package com.zerobank.pages;
 
 import com.zerobank.utilities.BrowserUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,11 +12,20 @@ public class AccountSummaryPage extends BasePage{
     @FindBy(css = ".board-header")
     private List<WebElement> accountTypes;
 
+    @FindBy(xpath = "(//thead)[3]//th")
+    private List<WebElement> columns;
+
     public List<String> getAccountTypesTexts(){
 
-        List<String> elementsText = BrowserUtils.getElementsText(accountTypes);
-        return elementsText;
+        return BrowserUtils.getElementsText(accountTypes);
+
     }
+
+    public List<String> getColumnNames(){
+       return BrowserUtils.getElementsText(columns);
+
+    }
+
 
 
 }

@@ -42,6 +42,8 @@ public class Account_Summary_Step_Defs {
     }
     @Then("Validate credit accounts columns")
     public void validate_credit_accounts_columns(List<String >expected) {
+        List<String> actual = accountSummaryPage.getColumnNames();
+        Assert.assertEquals(expected,actual);
 
     }
 
