@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class AccountSummaryPage extends BasePage{
+public class AccountSummaryPage extends BasePage {
 
     @FindBy(css = ".board-header")
     private List<WebElement> accountTypes;
@@ -15,17 +15,14 @@ public class AccountSummaryPage extends BasePage{
     @FindBy(xpath = "(//thead)[3]//th")
     private List<WebElement> columns;
 
-    public List<String> getAccountTypesTexts(){
-
+    public List<String> getAccountTypesTexts() {
         return BrowserUtils.getElementsText(accountTypes);
-
     }
 
-    public List<String> getColumnNames(){
-       return BrowserUtils.getElementsText(columns);
+    public List<String> getColumnNames() {
+        return BrowserUtils.getElementsText(columns);
 
     }
-
 
 
 }
